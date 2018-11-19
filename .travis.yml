@@ -22,10 +22,10 @@ cache:
   - $HOME/.coursier
 
 script:
-  - sbt clean coverage test
-  - sbt coverageReport
-  - sbt coverageAggregate
-  - sbt codacyCoverage
+  - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false clean coverage test
+  - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageReport
+  - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageAggregate
+  - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false codacyCoverage
 
   - echo "testing successful $CODACY_PROJECT_TOKEN"
   - echo "Finished! hmmm :)"
