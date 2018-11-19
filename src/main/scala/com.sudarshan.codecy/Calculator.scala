@@ -2,6 +2,11 @@ package com.sudarshan.codecy
 
 class Calculator {
   def add(a: Int, b: Int) : Int = a + b
+  def subtract(a: Int, b: Int) : Int = {
+    if(true)
+      println("he he subtract")
+    a - b
+  }
 
 //3
   //2
