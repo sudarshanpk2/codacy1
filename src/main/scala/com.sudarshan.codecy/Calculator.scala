@@ -8,6 +8,12 @@ class Calculator {
     a - b
   }
 
+  def multiply(a: Int, b: Int) : Int = {
+    if(true)
+      println("he he multiply")
+    a * b
+  }
+
 //3
   //2
 
