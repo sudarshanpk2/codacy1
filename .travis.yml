@@ -23,10 +23,11 @@ cache:
 
 jobs:
   - stage: Tests
+  script:
     - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false clean coverage test
     - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageReport
     - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageAggregate
     - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false codacyCoverage
 
     - echo "testing successful"
-    - echo "Finished! :)"
+    - echo "Finished! hmmm :)"
