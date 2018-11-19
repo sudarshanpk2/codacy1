@@ -1,0 +1,32 @@
+dist: trusty
+language: scala
+scala:
+- 2.12.5
+jdk:
+- oraclejdk8
+
+env:
+  global:
+  - CODACY_PROJECT_TOKEN=6878bbcef53d408b99c541ea4036f87c
+
+before_cache:
+- find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+- find $HOME/.sbt -name "*.lock" -delete
+
+cache:
+  directories:
+  - $HOME/.ivy2/cache
+  - $HOME/.sbt/cache
+  - $HOME/.sbt/launchers
+  - $HOME/.sbt/boot/
+  - $HOME/.coursier
+
+jobs:
+  - stage: Tests
+    - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false clean coverage test
+    - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageReport
+    - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false coverageAggregate
+    - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false codacyCoverage
+
+    - echo "testing successful"
+    - echo "Finished! :)"
