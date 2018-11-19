@@ -22,4 +22,4 @@ cache:
   - $HOME/.coursier
 
 script:
-    - testCoverage.sh
+    - travis/testCoverage.sh
