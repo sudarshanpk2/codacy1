@@ -29,4 +29,4 @@ jobs:
     - sbt ++$TRAVIS_SCALA_VERSION -DscalaFmtEnabled=false -DhammerEnabled=false codacyCoverage
 
     - echo "testing successful"
-    - echo "Finished! :)"
+    - echo "Finished! hmmm :)"
