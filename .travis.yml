@@ -27,5 +27,6 @@ script:
   - sbt coverageAggregate
   - sbt codacyCoverage
 
-  - echo "testing successful"
+  - echo "testing successful $CODACY_PROJECT_TOKEN"
   - echo "Finished! hmmm :)"
+  - echo $CODACY_PROJECT_TOKEN
