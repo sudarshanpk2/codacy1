@@ -14,6 +14,12 @@ class Calculator {
     a * b
   }
 
+  def div(a: Int, b: Int) : Int = {
+    if(true)
+      println("he he div")
+    a / b
+  }
+
 //3
   //2
 
